@@ -514,9 +514,10 @@ button {
 
 .finderShell {
   min-height: 100dvh;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(250, 250, 250, 1)),
-    url("/cmp-hero.jpg") center top / cover no-repeat;
+  background-color: #fafafa;
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .finderShell__inner {

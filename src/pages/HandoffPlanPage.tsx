@@ -145,7 +145,12 @@ export function HandoffPlanPage() {
   const stepIndex = getHandoffStepIndex(activeTab);
   const isLastStep = stepIndex >= HANDOFF_STEPS.length - 1;
   const BASE = import.meta.env.BASE_URL;
-  const grid = ['/room-1.webp', '/room-2.avif', '/cmp-hero.jpg', '/room-1.webp'];
+  const grid = [
+    `${BASE}room-1.webp`,
+    `${BASE}room-2.avif`,
+    `${BASE}cmp-hero.jpg`,
+    `${BASE}room-1.webp`,
+  ];
 
   const persist = useCallback(
     (nextAddons = addonQty, nextQty = qty) => {
@@ -615,7 +620,7 @@ export function HandoffPlanPage() {
             <div className="eventMediaHero__main">
               <img
                 className="eventMediaHero__video"
-                src={`${import.meta.env.BASE_URL}cmp-hero.jpg`}
+                src={`${BASE}cmp-hero.jpg`}
                 alt=""
               />
               <div className="eventMediaHero__scrim" aria-hidden />
@@ -755,7 +760,7 @@ export function HandoffPlanPage() {
                                       <div className="imageSinglePane">
                                         <img
                                           className="image"
-                                          src={`${import.meta.env.BASE_URL}room-1.webp`}
+                                          src={`${BASE}room-1.webp`}
                                           alt=""
                                         />
                                       </div>

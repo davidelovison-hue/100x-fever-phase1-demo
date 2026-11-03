@@ -182,7 +182,12 @@ export function SessionPlanPage() {
   };
 
   const BASE = import.meta.env.BASE_URL;
-  const grid = ['/room-1.webp', '/room-2.avif', '/cmp-hero.jpg', '/room-1.webp'];
+  const grid = [
+    `${BASE}room-1.webp`,
+    `${BASE}room-2.avif`,
+    `${BASE}cmp-hero.jpg`,
+    `${BASE}room-1.webp`,
+  ];
 
   const cartBody = (
     <>
@@ -268,7 +273,7 @@ export function SessionPlanPage() {
             <div className="eventMediaHero__main">
               <img
                 className="eventMediaHero__video"
-                src={`${import.meta.env.BASE_URL}cmp-hero.jpg`}
+                src={`${BASE}cmp-hero.jpg`}
                 alt=""
               />
               <div className="eventMediaHero__scrim" aria-hidden />
@@ -390,7 +395,7 @@ export function SessionPlanPage() {
                         <div className="imageWrapper">
                           <img
                             className="image imageSinglePane"
-                            src={`${import.meta.env.BASE_URL}room-1.webp`}
+                            src={`${BASE}room-1.webp`}
                             alt=""
                           />
                           <div className="imageTagsCorner">

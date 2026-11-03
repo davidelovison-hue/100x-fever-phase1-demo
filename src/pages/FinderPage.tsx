@@ -9,6 +9,7 @@ import {
 } from '../lib/packages';
 import { handoverPath } from '../lib/routes';
 import { formatPrice } from '../lib/formatPrice';
+import { publicAsset } from '../lib/publicAsset';
 
 export function FinderPage() {
   const navigate = useNavigate();
@@ -26,11 +27,16 @@ export function FinderPage() {
   }, [section, nights, guests]);
 
   return (
-    <div className="finderShell">
+    <div
+      className="finderShell"
+      style={{
+        backgroundImage: `linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(250, 250, 250, 1)), url(${publicAsset('cmp-hero.jpg')})`,
+      }}
+    >
       <div className="finderShell__inner">
         <div className="finderPanel">
           <div className="finderBrand">
-            <img src={`${import.meta.env.BASE_URL}cmp-logo.png`} alt="Crash My Playa" />
+            <img src={publicAsset('cmp-logo.png')} alt="Crash My Playa" />
             <span className="feverNav__pill">100x package finder · demo</span>
           </div>
           <h1 className="hDisplay">{EVENT.title}</h1>

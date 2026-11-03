@@ -12,6 +12,7 @@ import {
   getPackage,
 } from '../lib/packages';
 import { handoverLocation } from '../lib/routes';
+import { publicAsset } from '../lib/publicAsset';
 import './PackagesHandoverPage.css';
 
 const TOTAL = 9699;
@@ -59,7 +60,7 @@ export function PackagesHandoverPage() {
         </div>
 
         <div className="cmp__navCenter">
-          <img src={`${import.meta.env.BASE_URL}cmp-logo.png`} alt="Crash My Playa" className="cmp__logo" />
+          <img src={publicAsset('cmp-logo.png')} alt="Crash My Playa" className="cmp__logo" />
           <div className="cmp__navDivider" />
           <div className="cmp__dates">
             <strong>January 13-16, 2027</strong>
@@ -190,8 +191,8 @@ export function PackagesHandoverPage() {
         </div>
 
         <div className="cmp__gallery">
-          <img src={`${import.meta.env.BASE_URL}room-1.webp`} alt="Run of House room" />
-          <img src={`${import.meta.env.BASE_URL}room-2.avif`} alt="Run of House accommodation" />
+          <img src={publicAsset('room-1.webp')} alt="Run of House room" />
+          <img src={publicAsset('room-2.avif')} alt="Run of House accommodation" />
         </div>
 
         <section className="cmp__detailsCard">

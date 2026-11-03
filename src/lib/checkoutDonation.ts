@@ -1,10 +1,12 @@
 /** Checkout-only coral donation (left column, above payment). */
 
+import { publicAsset } from './publicAsset';
+
 export const CHECKOUT_DONATION_LINE_ID = 'donation-coral';
 
 export const CHECKOUT_DONATION = {
   title: 'Restore Coral Reefs in the Yucatán',
-  logo: '/cmp-hero.jpg',
+  logo: publicAsset('cmp-hero.jpg'),
   logoAlt: 'Coral reef restoration',
   body:
     'Together we can bring life back to Mexico’s reefs. Every gift places a coral unit where 30+ marine species can thrive—and helps Crash My Playa give back to the Riviera Cancún community that hosts us.',

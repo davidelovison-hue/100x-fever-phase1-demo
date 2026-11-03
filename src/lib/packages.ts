@@ -3,6 +3,8 @@
  * Prices are demo estimates — live on-sale prices are not published yet on the site.
  */
 
+import { publicAsset } from './publicAsset';
+
 export type Resort = 'moon-palace' | 'belmond';
 export type Section =
   | 'run-of-house'
@@ -95,7 +97,7 @@ export const EVENT = {
   subtitle: 'Four nights of country music · Riviera Cancún',
   dates: 'January 13–16, 2027',
   venue: 'Moon Palace Cancún & Belmond Maroma',
-  image: '/cmp-hero.jpg',
+  image: publicAsset('cmp-hero.jpg'),
 } as const;
 
 /** Post-package add-ons (Fever step after Continue) — not hotel nights. */
@@ -107,7 +109,7 @@ export const ADDONS: Addon[] = [
     priceCents: 12900,
     per: 'person',
     category: 'experience',
-    image: '/room-2.webp',
+    image: publicAsset('room-2.webp'),
   },
   {
     id: 'beach-club-day',
@@ -116,7 +118,7 @@ export const ADDONS: Addon[] = [
     priceCents: 9900,
     per: 'person',
     category: 'experience',
-    image: '/room-1.webp',
+    image: publicAsset('room-1.webp'),
   },
   {
     id: 'merch-tee',
@@ -125,7 +127,7 @@ export const ADDONS: Addon[] = [
     priceCents: 4500,
     per: 'item',
     category: 'merch',
-    image: '/merch/tee.jpg',
+    image: publicAsset('merch/tee.jpg'),
   },
   {
     id: 'merch-hoodie',
@@ -134,7 +136,7 @@ export const ADDONS: Addon[] = [
     priceCents: 8500,
     per: 'item',
     category: 'merch',
-    image: '/merch/hoodie.jpg',
+    image: publicAsset('merch/hoodie.jpg'),
   },
   {
     id: 'merch-tote',
@@ -143,7 +145,7 @@ export const ADDONS: Addon[] = [
     priceCents: 2800,
     per: 'item',
     category: 'merch',
-    image: '/merch/tote.jpg',
+    image: publicAsset('merch/tote.jpg'),
   },
   {
     id: 'merch-hat',
@@ -152,7 +154,7 @@ export const ADDONS: Addon[] = [
     priceCents: 3500,
     per: 'item',
     category: 'merch',
-    image: '/merch/hat.jpg',
+    image: publicAsset('merch/hat.jpg'),
   },
   {
     id: 'merch-lanyard',
@@ -161,7 +163,7 @@ export const ADDONS: Addon[] = [
     priceCents: 1500,
     per: 'item',
     category: 'merch',
-    image: '/merch/lanyard.jpg',
+    image: publicAsset('merch/lanyard.jpg'),
   },
 ];
 
@@ -179,7 +181,7 @@ export const IMPACT_ADDONS: ImpactAddon[] = [
     name: 'Restore Coral Reefs in the Yucatán',
     unitHint: '$10 = 1 Coral Unit',
     priceCents: 1000,
-    image: '/cmp-hero.jpg',
+    image: publicAsset('cmp-hero.jpg'),
     listingTag: 'Sale ends in 74 days',
     description:
       'Help restore vital coral reefs off the Yucatán Peninsula. Every $10 funds one coral unit. Pick an amount, then add quantity to increase your donation.',
