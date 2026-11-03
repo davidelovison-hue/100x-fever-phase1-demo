@@ -1,0 +1,589 @@
+.planPage {
+  --festival-nav-height: calc(0.5rem + 2rem + 0.5rem);
+  --sticky-tabs-height: 3.85rem;
+  --tab-content-scroll-gap: 0.75rem;
+  --cart-column-top-gap: 1.25rem;
+  min-height: 100vh;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: clip;
+}
+
+@media (max-width: 900px) {
+  .planPage {
+    /* Match FestivalNavbar: 0.45rem padding + 2.75rem icon buttons + 1px border */
+    --festival-nav-height: calc(0.45rem + 2.75rem + 0.45rem + 1px);
+    --sticky-tabs-height: 2.6rem;
+    --hero-extra-tail: 0px;
+  }
+
+}
+
+@media (min-width: 901px) {
+  .planPage {
+    --sticky-tabs-height: 4.15rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .planPage {
+    --festival-nav-height: calc(0.5rem + 2.5rem + 0.5rem);
+  }
+}
+
+.planStickyNav {
+  order: 1;
+  flex: 0 0 auto;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #000;
+  border-bottom: none;
+  box-sizing: border-box;
+}
+
+.planPage--marketplace {
+  /* Dark CMP partner bar overlays the hero (no gap below nav) */
+  --festival-nav-height: 3.5rem;
+  background: oklch(97% 0 0deg);
+}
+
+.planPage--marketplace .planStickyNav {
+  position: fixed;
+  top: 0;
+  inset-inline: 0;
+  height: 0;
+  z-index: 200;
+  overflow: visible;
+  pointer-events: none;
+  background: transparent;
+}
+
+.planPage--marketplace .planStickyNav .festivalNavbar {
+  pointer-events: auto;
+  width: 100%;
+}
+
+/* Dark partner bar is opaque — no frosted overlay on scroll */
+.planPage--marketplace.planPage--navScrolled .planStickyNav::before {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .planPage--marketplace {
+    --festival-nav-height: 3.5rem;
+  }
+}
+
+.planHeroSlot {
+  order: 2;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.planHeroSlot--immersive {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+.planPage--marketplace .planHeroSlot--immersive {
+  margin-top: 0;
+  height: clamp(400px, calc(100svh + 1.5rem), 3840px);
+  min-height: clamp(400px, calc(100svh + 1.5rem), 3840px);
+}
+
+.planDesktopShell {
+  order: 3;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.eventTitle {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 1.5rem 1rem 1rem;
+  font-size: var(--type-h2-size);
+  line-height: var(--type-h2-line-height);
+  font-weight: var(--font-weight-bold);
+  color: #0a0a0a;
+  letter-spacing: -0.02em;
+}
+
+.planOverviewSlot {
+  flex: 0 0 auto;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  border-bottom: 1px solid #e8ecef;
+}
+
+.planIntroBand {
+  flex: 0 0 auto;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 0;
+  background: #fff;
+}
+
+.planPage--marketplace .planIntroBand {
+  width: 100%;
+  padding: 1.5rem 1rem;
+  background: #fff;
+}
+
+.planPage--marketplace .planIntroBand .planFold,
+.planPage--marketplace .planTickets {
+  max-width: 80rem;
+  margin-inline: auto;
+}
+
+.planTicketsSection {
+  width: 100%;
+  min-width: 0;
+  padding: 1.5rem 1rem 2.5rem;
+  background: transparent;
+  box-sizing: border-box;
+}
+
+.planTickets {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  min-width: 0;
+}
+
+.planTicketsRail {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 2rem;
+  align-items: stretch;
+  width: 100%;
+  min-width: 0;
+}
+
+.planTicketsMain {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  min-width: 0;
+}
+
+.planTicketsCart {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .planPage--marketplace .fvSections {
+    padding-inline: 1rem;
+  }
+}
+
+.planTicketsHeading {
+  margin: 1.35rem 0 0.15rem;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #031419;
+}
+
+.planArtistsSlot {
+  flex: 0 0 auto;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 0.9rem 0 0;
+  margin: 0;
+  border-top: 1px solid #eef0f2;
+}
+
+.planIntroBand .festivalArtistsCarousel__hint {
+  font-size: 0.8125rem;
+  line-height: 1.2;
+  font-weight: 600;
+  color: #111111;
+}
+
+.planIntroBand .festivalArtistsCarousel__outer {
+  --artist-track-pad-top: 0.1rem;
+}
+
+.planIntroBand .festivalArtistsCarousel__track {
+  padding: 0.1rem 0 0.35rem;
+  margin: 0;
+  gap: 0.75rem;
+}
+
+.planTabsScrollAnchor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.planTabsSlot {
+  flex: 0 0 auto;
+  position: sticky;
+  top: var(--festival-nav-height);
+  z-index: 110;
+  isolation: isolate;
+  background: #fff;
+  min-width: 0;
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: 0;
+  align-self: stretch;
+  border-bottom: none;
+}
+
+.planPage--marketplace {
+  --sticky-tabs-height: 2.75rem;
+}
+
+.planPage--marketplace .planIntroBand .fvNavTabs,
+.planPage--marketplace .planTabsSlot {
+  position: sticky;
+  top: calc(var(--festival-nav-height) + 0.5rem);
+  z-index: 110;
+  background: transparent;
+}
+
+.planPage--marketplace .planIntroBand .fvNavTabs,
+.planPage--marketplace .planTabsSlot .fvNavTabs {
+  z-index: 110;
+  background: transparent;
+}
+
+.planTabsSlot--forced {
+  border-bottom: 1px solid #eceef0;
+}
+
+.planMainShell {
+  flex: 1 1 auto;
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 28px 1rem 2.5rem;
+}
+
+.planMainColumn {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  container-type: inline-size;
+  container-name: plan-main;
+  --plan-card-width: min(340px, calc((100% - 1rem) / 2));
+  --plan-card-min-height: 26.5rem;
+}
+
+@supports (container-type: inline-size) {
+  .planMainColumn {
+    --plan-card-width: min(
+      340px,
+      max(11rem, calc((100cqi - 2 * 0.75rem) / 2.5)),
+      calc((100cqi - 0.75rem) / 2)
+    );
+  }
+}
+
+.planContentColumn {
+  min-width: 0;
+  width: 100%;
+  min-height: calc(
+    100vh - var(--festival-nav-height) - var(--sticky-tabs-height) - 10rem
+  );
+}
+
+.categorySection {
+  margin-bottom: 2.5rem;
+  scroll-margin-top: calc(
+    var(--festival-nav-height) + var(--sticky-tabs-height) + var(--tab-content-scroll-gap, 0.75rem)
+  );
+}
+
+.placeholderSection {
+  padding: 2rem 0;
+  color: #536b75;
+  font-size: var(--type-base-size);
+  line-height: var(--type-base-line-height);
+}
+
+@media (min-width: 901px) {
+  .planPage--marketplace {
+    --festival-nav-height: calc(1.5rem + 4rem);
+    --sticky-tabs-height: calc(2.5rem + 1px);
+  }
+
+  .planDesktopShell {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(240px, 340px);
+    grid-template-rows: auto auto 1fr;
+    grid-template-areas:
+      "intro intro"
+      "tabs tabs"
+      "main cart";
+    max-width: 80rem;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1rem;
+    column-gap: 1.5rem;
+    align-items: start;
+  }
+
+  .planHeroSlot--mediaHero,
+  .planHeroSlot--mediaHero.planHeroSlot--immersive {
+    width: 100%;
+    max-width: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .planHeroSlot--mediaHero .festivalGalleryBand {
+    max-width: none;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .eventTitle {
+    padding: 1.5rem 0 1rem;
+  }
+
+  .planIntroBand {
+    grid-area: intro;
+    grid-column: 1 / -1;
+    width: 100%;
+    padding: 0;
+  }
+
+  .planPage--marketplace .planDesktopShell {
+    display: flex;
+    flex-direction: column;
+    max-width: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .planPage--marketplace .planIntroBand {
+    grid-area: auto;
+    grid-column: auto;
+    padding: 1.5rem;
+  }
+
+  .planPage--marketplace .planTicketsSection {
+    padding: 1.5rem 1.5rem 2.5rem;
+  }
+
+  .planPage--marketplace .planTicketsRail {
+    grid-template-columns: minmax(0, 1fr) 400px;
+  }
+
+  .planPage--marketplace .planTicketsCart {
+    display: block;
+    min-width: 0;
+    align-self: stretch;
+  }
+
+  .planPage--marketplace .planTicketsCart .planCartColumn {
+    grid-area: auto;
+    position: sticky;
+    top: calc(var(--festival-nav-height) + 0.5rem);
+    width: 100%;
+    z-index: 89;
+    align-self: start;
+  }
+
+  .planPage--marketplace .planTabsScrollAnchor,
+  .planPage--marketplace .planTabsSlot {
+    grid-area: auto;
+    grid-column: auto;
+    width: 100%;
+  }
+
+  .planPage--marketplace .planMainShell {
+    grid-area: auto;
+    padding: 0 0 0.5rem;
+  }
+
+  .planOverviewSlot {
+    width: 100%;
+    min-width: 0;
+    padding-top: 0;
+  }
+
+  .planArtistsSlot {
+    width: 100%;
+    padding: 1rem 0 0;
+  }
+
+  .planTabsScrollAnchor {
+    grid-area: tabs;
+    align-self: start;
+  }
+
+  .planTabsSlot {
+    grid-area: tabs;
+    grid-column: 1 / -1;
+    width: 100%;
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+    position: sticky;
+  }
+
+  .planMainShell {
+    grid-area: main;
+    max-width: none;
+    margin: 0;
+    padding: 28px 0 2.5rem;
+  }
+
+  .planCartColumn {
+    grid-area: cart;
+    position: sticky;
+    top: calc(var(--festival-nav-height) + var(--sticky-tabs-height));
+    padding-top: 0;
+    margin-top: 0;
+    z-index: 89;
+    align-self: start;
+    width: 100%;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    box-sizing: border-box;
+  }
+
+  .planCartColumn--placeholder {
+    visibility: hidden;
+    pointer-events: none;
+    min-height: 12rem;
+  }
+
+  .cartPanelReveal {
+    animation: cartPanelIn 0.38s ease-out both;
+  }
+
+  @keyframes cartPanelIn {
+    from {
+      opacity: 0;
+      transform: translateX(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .planMainColumn {
+    --plan-card-width: 100%;
+  }
+
+  /* Desktop sidebar cart — not mounted on mobile; keep rule as safety net */
+  .planCartColumn {
+    display: none !important;
+  }
+
+  .planPage--marketplace .planIntroBand {
+    padding: 1.5rem 1rem;
+  }
+
+  body.has-sticky-get-tickets .planPage--marketplace .planIntroBand {
+    padding-bottom: calc(5.5rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  .planPage--marketplace .planMainShell {
+    padding: 0 0 calc(5.25rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  .planPage--marketplace .planTicketsSection {
+    padding: 1.15rem 1rem calc(5.5rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  .planPage--marketplace .planTickets {
+    gap: 1rem;
+  }
+
+  .planPage--marketplace .planTicketsRail {
+    gap: 1.25rem;
+  }
+
+  .planHeroSlot--immersive {
+    flex: 0 0 auto;
+    height: calc(100dvh - var(--festival-nav-height) + var(--hero-extra-tail, 0px));
+    min-height: calc(100dvh - var(--festival-nav-height) + var(--hero-extra-tail, 0px));
+    max-height: none;
+  }
+
+  /* First fold is exactly one screen: photo edge-to-edge, CTA on the viewport bottom. */
+  .planPage--marketplace .planHeroSlot--immersive {
+    flex: 0 0 var(--app-vh, 100svh);
+    flex-shrink: 0;
+    width: 100%;
+    height: var(--app-vh, 100svh);
+    min-height: var(--app-vh, 100svh);
+    max-height: var(--app-vh, 100svh);
+    overflow: hidden;
+  }
+
+  @supports (height: 100dvh) {
+    .planPage--marketplace .planHeroSlot--immersive {
+      flex-basis: var(--app-vh, 100dvh);
+      height: var(--app-vh, 100dvh);
+      min-height: var(--app-vh, 100dvh);
+      max-height: var(--app-vh, 100dvh);
+    }
+  }
+
+  .planHeroSlot--immersive .festivalGalleryBand {
+    height: 100%;
+    min-height: 100%;
+  }
+
+  .planTabsSlot {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+  }
+
+  .eventTitle {
+    padding: 1.25rem 1rem 0.85rem;
+  }
+
+  .planMainShell {
+    padding: 1.35rem 1rem calc(4.5rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  .categorySection {
+    margin-bottom: 1.75rem;
+  }
+}

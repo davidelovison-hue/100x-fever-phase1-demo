@@ -1,0 +1,378 @@
+/**
+ * Fever whitelabel skin for Crash My Playa / 100x Presents.
+ * Same brand tokens as PackagesHandoverPage (live CMP).
+ */
+
+:root {
+  /* 100x / CMP brand — keep in sync with PackagesHandoverPage.css */
+  --cmp-yellow: #ffd768;
+  --cmp-yellow-btn: #e8d830;
+  --cmp-yellow-btn-hover: #dcc42a;
+  --cmp-navy: #00385c;
+  --cmp-nav: var(--cmp-navy);
+  --cmp-teal: #00acbe;
+  --cmp-teal-deep: #007a8f;
+  --cmp-card: var(--cmp-navy);
+  --cmp-lime: #c5e063;
+  --cmp-lime-btn: #b6d94a;
+  --cmp-lime-hover: #a5c93f;
+  --cmp-font: "proxima-nova", "Montserrat", "Nexar Sans", Arial, sans-serif;
+
+  /* Fever theme tokens → partner */
+  --font-ui: var(--cmp-font);
+  --font-display: var(--cmp-font);
+  /* Primary CTA = CMP Buy Now yellow */
+  --cta-bg: var(--cmp-yellow-btn);
+  --cta-bg-hover: var(--cmp-yellow-btn-hover);
+  --cta-text: var(--cmp-navy);
+  --brand-accent: var(--cmp-teal);
+  --entity-accent: var(--cmp-teal);
+  --brand-nav-bg: var(--cmp-navy);
+  --brand-nav-border: rgb(0 172 190 / 0.28);
+  --brand-progress: var(--cmp-teal);
+  --brand-progress-track: #d7eef1;
+  --brand-link: var(--cmp-teal-deep);
+  --text: var(--cmp-navy);
+  --text-muted: #4a6a7c;
+
+  /* Checkout / Pacha tokens → CMP */
+  --pacha-cherry: var(--cmp-navy);
+  --pacha-cherry-mid: var(--cmp-navy);
+  --pacha-cherry-deep: #002844;
+  --pacha-cherry-glow: rgb(0 172 190 / 0.28);
+  --pacha-red-mist: #e8f7f9;
+  --pacha-black: var(--cmp-navy);
+
+  --checkout-text: var(--cmp-navy);
+  --checkout-text-muted: var(--text-muted);
+  --checkout-border: #c5d5de;
+  --checkout-border-hover: var(--cmp-teal);
+  --checkout-border-soft: rgba(0, 56, 92, 0.1);
+  --checkout-surface-card: #fff;
+  --checkout-surface-field: #fff;
+  --checkout-surface-field-hover: #f3fafb;
+  --checkout-surface-field-focus: #fff;
+  --checkout-surface-header: rgba(255, 255, 255, 0.92);
+  --checkout-surface-popover: #fff;
+  --checkout-field-shadow: 0 0 0 1px rgba(0, 56, 92, 0.08), 0 2px 8px rgba(0, 56, 92, 0.06);
+  --checkout-field-shadow-focus: 0 0 0 3px rgb(0 172 190 / 0.28), 0 0 0 1px var(--cmp-teal);
+}
+
+body {
+  font-family: var(--cmp-font);
+  color: var(--cmp-navy);
+}
+
+/* —— Dark partner nav (Fever handoff) —— */
+.festivalNavbar:not(.festivalNavbar--marketplace) {
+  background: var(--brand-nav-bg);
+  border-bottom: 1px solid var(--brand-nav-border);
+  color: #fff;
+}
+
+.festivalNavbar:not(.festivalNavbar--marketplace) .logoImg--photo {
+  filter: none;
+  height: 2.5rem;
+  max-width: 12rem;
+}
+
+.festivalNavbar .whitelabelFeverMark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-left: 0.15rem;
+  padding-left: 0.75rem;
+  border-left: 1px solid rgb(255 255 255 / 0.22);
+  color: rgb(255 255 255 / 0.78);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.festivalNavbar .whitelabelFeverMark img {
+  height: 0.85rem;
+  width: auto;
+  opacity: 0.92;
+}
+
+.festivalNavbar:not(.festivalNavbar--marketplace) .iconBtn:hover,
+.festivalNavbar:not(.festivalNavbar--marketplace) .iconBtnOnly:hover {
+  background: rgb(0 172 190 / 0.22);
+}
+
+.festivalNavbar .ticketingProfileBtn:focus-visible,
+.festivalNavbar .logoButton:focus-visible {
+  outline-color: var(--cmp-yellow-btn);
+}
+
+/* —— Plan / tickets —— */
+.planPage--marketplace .eventMediaHero__buyBtn {
+  background: var(--cta-bg) !important;
+  color: var(--cta-text) !important;
+  border-radius: 999px !important;
+}
+
+.planPage--marketplace .eventMediaHero__buyBtn:hover {
+  background: var(--cta-bg-hover) !important;
+}
+
+.planPage--marketplace .fvNavTabs--pill .fvNavTabs__tab--active {
+  background: var(--cmp-navy);
+  color: #fff;
+}
+
+.packagePlanHint,
+.handoffPreselectLine {
+  color: var(--text-muted);
+}
+
+.handoffPreselectLine__icon {
+  border-color: var(--cmp-navy);
+  color: var(--cmp-navy);
+}
+
+.entityListingTag {
+  background: var(--cmp-navy) !important;
+  color: #fff !important;
+}
+
+.addonCard--selected {
+  outline-color: var(--cmp-teal);
+}
+
+.addonCard__cta {
+  border-color: var(--cmp-teal);
+  color: var(--cmp-navy);
+  font-family: var(--cmp-font);
+}
+
+.addonCard__cta:hover {
+  background: #e8f7f9;
+}
+
+.addonCard__cta--on {
+  border-color: var(--cmp-yellow-btn);
+  background: var(--cmp-yellow-btn);
+  color: var(--cmp-navy);
+}
+
+.addonCard__cta--on:hover {
+  background: var(--cmp-yellow-btn-hover);
+}
+
+.cardAdmission .price,
+.card .price {
+  color: var(--cmp-navy);
+}
+
+.addonsGroup__title,
+.planFold__title,
+.cartTitle,
+.ticketName,
+.groupCarouselTitle {
+  color: var(--cmp-navy);
+  font-family: var(--cmp-font);
+}
+
+/* —— Cart CTAs —— */
+.cartCheckoutBtn,
+.cartMobileCheckoutPill {
+  background: var(--cta-bg) !important;
+  color: var(--cta-text) !important;
+  font-family: var(--cmp-font);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  border-radius: 999px !important;
+  border: none !important;
+}
+
+.cartCheckoutBtn:hover:not(:disabled),
+.cartMobileCheckoutPill:hover:not(:disabled) {
+  background: var(--cta-bg-hover) !important;
+}
+
+.cartBackBtn,
+.cartMobileBackBtn {
+  border-color: var(--cmp-navy) !important;
+  color: var(--cmp-navy) !important;
+}
+
+.cartQtyBtnPlus,
+.cartQtyBtnMinus {
+  color: var(--cmp-teal-deep);
+}
+
+.cartQtyBtnPlus {
+  color: var(--cmp-teal) !important;
+}
+
+.ticketTrashBtn {
+  background: #e8f7f9 !important;
+  color: var(--cmp-teal-deep) !important;
+}
+
+.ticketTrashBtn:hover {
+  color: var(--cmp-navy);
+}
+
+.cartMobileTriggerBadge {
+  background: var(--cmp-teal) !important;
+}
+
+/* —— Checkout funnel —— */
+.checkoutPage,
+.guestCheckoutPage,
+.guestDetailsPage {
+  color: var(--cmp-navy);
+  color-scheme: light;
+}
+
+.checkoutPage__back,
+.guestCheckoutSectionTitle,
+.checkoutSummaryTitle,
+.checkoutSummaryLabel {
+  color: var(--cmp-navy) !important;
+}
+
+.checkoutSummaryCard {
+  background: #fff !important;
+  border-color: rgba(0, 56, 92, 0.12) !important;
+  box-shadow: 0 8px 28px rgba(0, 56, 92, 0.1) !important;
+  color: var(--cmp-navy);
+}
+
+.checkoutSummaryVenue,
+.checkoutSummaryValue,
+.checkoutSummaryLine__price,
+.checkoutBreakdown dd {
+  color: var(--cmp-navy) !important;
+}
+
+.connectPage__primaryBtn,
+.checkoutPayBtn,
+.guestCheckoutPayBtn,
+.guestCheckoutPage button[type='submit'],
+.btnPrimary,
+.installmentsConfirm__cta,
+.ticketSheet__done {
+  background: var(--cta-bg) !important;
+  color: var(--cta-text) !important;
+  border-color: transparent !important;
+  font-family: var(--cmp-font);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  border-radius: 999px !important;
+}
+
+.connectPage__primaryBtn:hover,
+.checkoutPayBtn:hover,
+.guestCheckoutPayBtn:hover:not(:disabled),
+.installmentsConfirm__cta:hover,
+.ticketSheet__done:hover:not(:disabled) {
+  background: var(--cta-bg-hover) !important;
+}
+
+.ticketSheet__qtyBtn--plus {
+  background: var(--cmp-teal) !important;
+  color: #fff !important;
+}
+
+.checkoutPayBtn.guestCheckoutPayBtn:disabled:hover {
+  background: var(--cta-bg) !important;
+}
+
+/* Override leftover orange pay styles */
+.guestCheckoutPayBtn {
+  background: var(--cta-bg) !important;
+  border-radius: 999px !important;
+}
+
+.guestCheckoutPayBtn:hover:not(:disabled) {
+  background: var(--cta-bg-hover) !important;
+}
+
+/* Payment + installments + sheet popups */
+.payMethodModal__card,
+.installmentsModal__card,
+.ticketSheet__panel {
+  font-family: var(--cmp-font);
+  color: var(--cmp-navy);
+}
+
+.payMethodModal__title,
+.installmentsModal__title,
+.ticketSheet__title,
+.ticketSheet__sectionTitle {
+  color: var(--cmp-navy);
+  font-family: var(--cmp-font);
+}
+
+.payMethodModal__option input[type='radio'],
+.installmentsModal__option input[type='radio'] {
+  accent-color: var(--cmp-teal);
+}
+
+.installmentsMeta__schedule,
+.installmentsModal__terms,
+.installmentsConfirm__legal a,
+.payMethodModal__secure,
+.checkoutDonation__link,
+.checkoutLegalLinks__item {
+  color: var(--cmp-teal-deep) !important;
+}
+
+.installmentsMeta__schedule:hover,
+.installmentsModal__terms:hover,
+.installmentsConfirm__legal a:hover,
+.checkoutLegalLinks__item:hover {
+  color: var(--cmp-navy) !important;
+}
+
+.installmentsConfirm__item--today .installmentsConfirm__node {
+  border-color: var(--cmp-teal);
+  background: var(--cmp-teal);
+}
+
+.checkoutSavedPay__trigger,
+.installmentsTrigger {
+  border-color: #c5d5de;
+  color: var(--cmp-navy);
+  background: #fff;
+}
+
+.checkoutSavedPay__trigger:hover,
+.installmentsTrigger:hover {
+  border-color: var(--cmp-teal);
+  background: #f3fafb;
+}
+
+.checkoutDonation {
+  background: #e8f7f9;
+}
+
+.checkoutDonation__title,
+.checkoutDonation__body {
+  color: var(--cmp-navy);
+}
+
+.checkoutDonation__chip--selected {
+  border-color: var(--cmp-teal);
+  box-shadow: inset 0 0 0 1px var(--cmp-teal);
+  background: #f3fafb;
+}
+
+.checkoutDonation__secure {
+  color: var(--cmp-teal-deep);
+}
+
+.checkoutDonation__secureIcon {
+  background: var(--cmp-teal-deep);
+}
+
+a {
+  text-underline-offset: 0.15em;
+}

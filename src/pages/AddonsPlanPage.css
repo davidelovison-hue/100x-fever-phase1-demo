@@ -1,0 +1,43 @@
+/* Add-ons catalog — Gaerten category/group card format (not stretched grid). */
+
+.addonsCatalog {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+  min-width: 0;
+}
+
+.addonsCatalog .groupBlock {
+  margin-bottom: 1.5rem;
+}
+
+.addonsCatalog .groupBlock:last-child {
+  margin-bottom: 0;
+}
+
+.addonsCatalog .groupCarouselTitle {
+  margin: 0 0 1rem;
+}
+
+/* Cards keep Gaerten --plan-card-width from .planMainColumn */
+.addonsCatalog .carouselSlideInner .addonEntityCard,
+.addonsCatalog .carouselSlideInner .card {
+  width: 100%;
+  max-width: 100%;
+  min-height: var(--plan-card-min-height, 26.5rem);
+}
+
+.addonsCatalog .addonEntityCard .content {
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.addonsCatalog .addonEntityCard .lead {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.addonsCatalog .addonEntityCard .footer {
+  margin-top: auto;
+}
